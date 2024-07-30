@@ -54,3 +54,7 @@ RedCircle.drawCircle()
 SkinnyBlueRectangle = Rectangle(2, 3, 'blue')
 SkinnyBlueRectangle.drawRectangle()
 # %%
+
+FatYellowRectangle = Rectangle(20, 5, 'yellow')
+FatYellowRectangle.drawRectangle()
+# %%
