@@ -86,3 +86,23 @@ vehicle2 = Vehicle(180, 25)
 vehicle2.assign_seating_capacity(4)
 vehicle2.display_properties()
 # %%
+class Graph():
+    def __init__(self, id):
+        self.id = id
+        self.id = 80
+
+
+val = Graph(200)
+print(val.id)
+
+# %%
+for num in range(1, 6):
+    if num == 3:
+        break
+    print(num)
+# %%
+for num in range(1, 6):
+    if num == 3:
+        continue
+    print(num)
+# %%
