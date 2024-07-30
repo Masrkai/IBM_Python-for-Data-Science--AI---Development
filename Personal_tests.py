@@ -23,7 +23,22 @@ class Circle(object):
         plt.axis('scaled')
         plt.show()
 
-# %%
+# %%\
+class Rectangle(object):
+    
+    # Constructor
+    def __init__(self, width=2, height=3, color='r'):
+        self.height = height 
+        self.width = width
+        self.color = color
+    
+    # Method
+    def drawRectangle(self):
+        plt.gca().add_patch(plt.Rectangle((0, 0), self.width, self.height ,fc=self.color))
+        plt.axis('scaled')
+        plt.show()
+# %%\
+
 RedCircle = Circle(10, 'red')
 
 print('Radius of object:',RedCircle.radius)
@@ -33,4 +48,9 @@ RedCircle.add_radius(5)
 print('Radius of object of after applying the method add_radius(5):',RedCircle.radius)
 
 RedCircle.drawCircle()
+# %%
+
+
+SkinnyBlueRectangle = Rectangle(2, 3, 'blue')
+SkinnyBlueRectangle.drawRectangle()
 # %%
