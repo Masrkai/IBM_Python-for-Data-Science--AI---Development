@@ -111,54 +111,63 @@ while count < 5:
     print(count) 
     count += 1
 # %%
-x = "Go" 
-if x == "Go": 
-    print('Go') 
-else: 
-    print('Stop') 
+x = "Go"
+if x == "Go":
+    print('Go')
+else:
+    print('Stop')
 print('Mike')
 # %%
 x = 1
 x = x > -5
 # %%
-x = 5 
-while x != 2: 
-    print(x) 
-    x = x - 1 
+x = 5
+while x != 2:
+    print(x)
+    x = x - 1
 # %%
 class Points(object):
     def __init__(self, x, y):
-        self.x = x 
-        self.y = y 
+        self.x = x
+        self.y = y
 
 
-    def print_point(self): 
-        print('x=', self.x, ' y=', self.y) 
+    def print_point(self):
+        print('x=', self.x, ' y=', self.y)
 
 
-p1 = Points("A", "B") 
+p1 = Points("A", "B")
 p1.print_point()
 # %%
-for i, x in enumerate(['A', 'B', 'C']): 
+for i, x in enumerate(['A', 'B', 'C']):
     print(i + 1, x)
 # %%
-class Points(object): 
-    def __init__(self, x, y): 
-        self.x = x 
-        self.y = y 
-    def print_point(self): 
-        print('x=', self.x, ' y=', self.y) 
+class Points(object):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def print_point(self):
+        print('x=', self.x, ' y=', self.y)
 
 
-p2 = Points(1, 2) 
-p2.x = 'A' 
+p2 = Points(1, 2)
+p2.x = 'A'
 p2.print_point()
 # %%
-a = 1 
-def do(x): 
-    a = 100 
-    return x + a 
+a = 1
+def do(x):
+    a = 100
+    return x + a
 
 
 print(do(1))
+# %%
+import pandas as pd
+# Creating a DataFrame from a dictionary
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+        'Age': [25, 30, 35, 28],
+        'City': ['New York', 'San Francisco', 'Los Angeles', 'Chicago']}
+df = pd.DataFrame(data)
+print(df)
+
 # %%
