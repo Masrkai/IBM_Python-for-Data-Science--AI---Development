@@ -241,3 +241,96 @@ links = soup.find_all('a')
 for link in links:
      print(link.text)
 # %%
+import os
+import requests
+from PIL import Image
+from IPython.display import IFrame
+
+url='https://www.ibm.com/'
+r=requests.get(url)
+
+r.status_code
+print(r.request.headers)
+
+print("request body:", r.request.body)
+
+header=r.headers
+print(r.headers)
+header['date']
+header['Content-Type']
+
+r.encoding
+r.text[0:100]
+
+url='https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBMDeveloperSkillsNetwork-PY0101EN-SkillsNetwork/IDSNlogo.png'
+
+r=requests.get(url)
+print(r.headers)
+r.headers['Content-Type']
+
+path=os.path.join(os.getcwd(),'image.png')
+
+with open(path,'wb') as f:
+    f.write(r.content)
+
+Image.open(path)
+
+# %%
+import os
+import requests
+from PIL import Image
+from IPython.display import IFrame
+
+url_get='http://httpbin.org/get'
+#A query string is a part of a uniform resource locator (URL), this sends other information to the web server. The start of the query is a ?, followed by a series of parameter and value pairs, as shown in the table below. The first parameter name is name and the value is Joseph. The second parameter name is ID and the Value is 123. Each pair, parameter, and value is separated by an equals sign, =. The series of pairs is separated by the ampersand &.
+
+#To create a Query string, add a dictionary. The keys are the parameter names and the values are the value of the Query string.
+
+payload={"name":"Joseph","ID":"123"}
+#Then passing the dictionary payload to the params parameter of the  get() function:
+
+r=requests.get(url_get,params=payload)
+#We can print out the URL and see the name and values.
+
+r.url
+#There is no request body.
+
+print("request body:", r.request.body)
+#We can print out the status code.
+
+print(r.status_code)
+#We can view the response as text:
+
+print(r.text)
+#We can look at the 'Content-Type'.
+
+r.headers['Content-Type']
+#As the content 'Content-Type' is in the JSON format we can use the method json(), it returns a Python dict:
+
+r.json()
+#The key args has the name and values:
+
+r.json()['args']
+#Post Requests
+#Like a GET request, a POST is used to send data to a server, but the POST request sends the data in a request body. In order to send the Post Request in Python, in the URL we change the route to POST:
+
+url_post='http://httpbin.org/post'
+#This endpoint will expect data as a file or as a form. A form is convenient way to configure an HTTP request to send data to a server.
+
+#To make a POST request we use the post() function, the variable payload is passed to the parameter  data :
+
+r_post=requests.post(url_post,data=payload)
+#Comparing the URL from the response object of the GET and POST request we see the POST request has no name or value pairs.
+
+print("POST request URL:",r_post.url )
+print("GET request URL:",r.url)
+#We can compare the POST and GET request body, we see only the POST request has a body:
+
+print("POST request body:",r_post.request.body)
+print("GET request body:",r.request.body)
+#We can view the form as well:
+
+r_post.json()['form']
+#There is a lot more you can do. Check out Requests for more.
+
+# %%
